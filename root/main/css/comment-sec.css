@@ -1,0 +1,27 @@
+.image-container{
+	display: block;
+	text-align: center;
+	border: 1px solid black;
+	background: rgb(214,214,214,0.5);
+}
+
+p img{
+	float: left;
+	margin-right: 5px;
+	border-right: 2px solid black;
+}
+
+.modal-footer{
+	margin: 0 auto;
+}
+
+.modal-footer p{
+	border-radius: 5px;
+	border: 1px solid black;
+	background-color: rgb(217,217,217);
+	padding: 5px;
+}
+
+.modal-footer p span{
+	padding: 3px;
+}

@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  width:100%;
 }
 .my-main{
 	width: 100%;
@@ -12,8 +13,64 @@ html, body {
 	margin: 0 auto;
 	
 }
+
+footer{
+	background-color: rgb(81,81,81,0);
+	font-size: 10px;
+}
+
+.navbar-right li{
+	padding:3px;
+
+}
+
+
+
+@media only screen and (min-width: 768px) {
+#navbarSupportedContent{
+	width: 100%;
+}
+
+
+.navbar-right{
+	width:25%;
+}
+
+.left-nav{
+	overflow:scroll;
+	height: 50px;
+	white-space: nowrap;
+	width:70%;
+}
 /*
-.my-para h1{
+.left-nav li a{
+	overflow-wrap: normal;
+}*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #343a40;
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #343a40;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #343a40;
+}
+}
+
+
+
+/*
+.my-para h1{}
 	font-family: Arial;
 	font-size: 40px;
 	color: white;
@@ -21,7 +78,7 @@ html, body {
 }
 
 .main-para{
-	text-align: center;
+	text-align: center
 
 }
 

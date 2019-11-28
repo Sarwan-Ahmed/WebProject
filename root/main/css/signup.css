@@ -1,0 +1,22 @@
+html,body,.row{
+	  	width: 100%;
+	  	height:100%;
+	  }	
+#left-column{
+	  	background: url("../resources/images/signup.jpg");
+	  	background-size: 100% 100%;
+	  	overflow-y: scroll;
+	  }
+
+#left-column p{
+	  	margin: 100px 0px;
+	  }
+	  /*
+#right-column .container{
+	  	margin: 150px 10px;
+	  }
+	*/
+.container .display-5 a{
+	  	text-decoration: underline;
+	  	color: grey;
+	  } 

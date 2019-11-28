@@ -4,36 +4,16 @@
 	<title>Join PixaGallery | PixaGallery</title>
 	 <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	  <link rel="stylesheet" href="css/signup.css" type="text/css">
+	  <script src="jquery/loadbar.js"></script>
+	  <script src="jquery/tooltip.js"></script>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	  <style>
-	  html,body,.row{
-	  	width: 100%;
-	  	height:100%;
-	  }	
-	  #left-column{
-	  	background: url("resources/images/signup.jpg");
-	  	background-size: 100% 100%;
-	  	overflow-y: scroll;
-	  }
-
-	  #left-column p{
-	  	margin: 100px 0px;
-	  }
-	  /*
-	  #right-column .container{
-	  	margin: 150px 10px;
-	  }
-	*/
-	  .container .display-5 a{
-	  	text-decoration: underline;
-	  	color: grey;
-	  } 
-
-	  	
-	  </style>	
+	   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	 
 </head>
 <body>
 	<div class="row">
@@ -48,27 +28,37 @@
 
 		<!----------------SIGN-UP FORM--------------------------------------------->
 		<div class="col-md-7" id="right-column">
+			<!-------------------------------------Progress Bar------------------------------>
+			<div class="container mt-3">
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+				  aria-valuemin="0" aria-valuemax="100" style="width:0%">
+				    0% Complete
+				  </div>
+				</div>
+			</div>	
+			<!-----------------------------------/Progress Bar------------------------------->
 			<div class="container">
 			
 				 <h2 class="display-2">Join Free</h2>
 				 <h5 class="display-5">Already have an account? <a href="login.html">Login</a> </h5>
 	
-				 <form action="/action_page.php">
+				 <form action="loading.html" id="myForm">
 				 	<div class="form-group">
-				      <label for="usr-fname">First Name </label>
-				      <input type="text" class="form-control" id="usr-fname" name="fname">
+				      <label for="usr-fname">First Name  </label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Ensure proper capitalization"></i>
+				      <input type="text" class="form-control" id="usr-fname" name="fname" data-state="0" pattern="[A-Z][a-zA-Z]*" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="usr-lname">Last Name </label>
-				      <input type="text" class="form-control" id="usr-lname" name="lname">
+				      <label for="usr-lname">Last Name </label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Ensure proper capitalization"></i>
+				      <input type="text" class="form-control" id="usr-lname" name="lname" data-state="0" pattern="[A-Z][a-zA-Z]*" required> 
 				    </div>  
 				    <div class="form-group">
-				      <label for="usr">Email Address</label>
-				      <input type="text" class="form-control" id="usr" name="username">
+				      <label for="usr">Email Address</label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Enter a valid email address"></i>
+				      <input type="email" class="form-control" id="usr" name="username" data-state="0" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="pwd">Password:</label>
-				      <input type="password" class="form-control" id="pwd" name="password">
+				      <label for="pwd">Password:</label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Password should be at least 6 characters long with at least one number, one lowercase and one uppercase letter"></i>
+				      <input type="password" class="form-control" id="pwd" name="password" data-state="0" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
 				    </div>
 				    <button type="submit" class="btn btn-dark btn-block">Join</button>
 		 		 </form>
