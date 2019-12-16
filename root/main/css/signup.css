@@ -6,10 +6,12 @@ html,body,.row{
 	  	background: url("../resources/images/signup.jpg");
 	  	background-size: 100% 100%;
 	  	overflow-y: scroll;
-	  }
+	  
+	  } 
 
 #left-column p{
 	  	margin: 100px 0px;
+	  
 	  }
 	  /*
 #right-column .container{
@@ -20,3 +22,14 @@ html,body,.row{
 	  	text-decoration: underline;
 	  	color: grey;
 	  } 
+
+.error{
+	color: red;
+	font-size: 12px;
+}	  
+
+input:focus {
+    outline: none !important;
+    border:1px solid #FF0000;
+    box-shadow: 0 0 10px #719ECE;
+}
