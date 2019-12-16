@@ -17,6 +17,13 @@
 	 
 </head>
 <body>
+	<?php
+	if(isset($_GET['q'])){
+		echo '
+			<div class="login-failed"><p class=" align-middle">Login failed!! Either User Name or Password is incorrect.<p></div>
+		';
+	}
+?>
 	<div class="row">
 		<!-----------------LEFT COLUMN---------------------------------------------->
 		<div class="col-md-6" id="left-column">
@@ -47,19 +54,19 @@
 				 <form action="script/signup.php"  id="myForm" method="POST">
 				 	<div class="form-group fname">
 				      <label for="usr-fname">First Name  </label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Ensure proper capitalization"></i>
-				      <input type="text" class="form-control" id="usr-fname" name="fname" data-state="0" required>
+				      <input type="text" class="form-control" id="usr-fname" name="fname" data-state="0">
 				    </div>
 				    <div class="form-group lname">
 				      <label for="usr-lname">Last Name </label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Ensure proper capitalization"></i>
-				      <input type="text" class="form-control" id="usr-lname" name="lname" data-state="0" required> 
+				      <input type="text" class="form-control" id="usr-lname" name="lname" data-state="0"> 
 				    </div>  
 				    <div class="form-group email">
 				      <label for="usr-email">Email Address</label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Enter a valid email address"></i>
-				      <input type="email" class="form-control" id="usr-email" name="user-email" data-state="0" required>
+				      <input type="email" class="form-control" id="usr-email" name="user-email" data-state="0" value="">
 				    </div>
 				    <div class="form-group pwd">
 				      <label for="pwd">Password:</label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Password should be at least 6 characters long with at least one number, one lowercase and one uppercase letter"></i>
-				      <input type="password" class="form-control" id="pwd" name="password" data-state="0" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required>
+				      <input type="password" class="form-control" id="pwd" name="password" data-state="0" value="">
 				    </div>
 				    <input type = "submit" id="join" class="btn btn-dark btn-block mb-3" value="Join">
 		 		 </form>

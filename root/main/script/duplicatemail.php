@@ -21,9 +21,8 @@
 
 
 
-
 	function checkEmail($user_email,$conn){
-	$sql = "SELECT email from user where email<>\"$user_email\"";
+	$sql = "SELECT email from user where email=\"$user_email\"";
 	$result = mysqli_query($conn,$sql);
 	if (mysqli_num_rows($result) > 0) {
 	    return true;

@@ -22,11 +22,16 @@
 			$sql = "Select * from user where email=".'"'.$user_mail.'"';
 			$result = mysqli_query($conn,$sql);
 			while($row = mysqli_fetch_assoc($result)){
-				$_SESSION["username"] = row["firstname"]." ".row["lastname"];
-				$_SESSION["profile-dp"] = row["profile_picture"];
+				$_SESSION["username"] = $row["firstname"]." ".$row["lastname"];
+				$_SESSION["profile-dp"] = $row["profile_picture"];
 				header('Location: http://localhost/root/main/user-profile.php');
 				exit();
 			}
+	}
+
+	else{
+		header('Location: http://localhost/root/main/login.php?q="Either Email or Password is incorrect!!"');
+		exit();
 	}	
     
     

@@ -1,22 +1,27 @@
 <?php 
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "pixagallery";
+	
 	 
 	//include "duplicatemail.php";
     //include("C:\xampp\php\PEAR\initcontrols\header_myworks.php");
+    
 	session_start();	
 
 	// Create connection
-	$conn =mysqli_connect($servername, $username, $password,$dbname,"3305");
+	$conn =mysqli_connect($servername, $username, $password,$dbname,"3307");
 
 	// Check connection
 	if (!$conn) {
-	    die("Connection failed: " . mysqli_connect_error());
+	    header('Location: http://localhost/root/main/signup.php?q="Either Email or Password is incorrect!!"');
+		exit();
 
 
 		}
+	
     
     $sql = 'INSERT INTO user (firstname, lastname, email, password) VALUES ('.'"'.$_POST["fname"].'"'.','.'"'.$_POST["lname"].'"'.','.'"'.$_POST["user-email"].'"'.','.'"'.$_POST["password"].'"'.');';
     if(!checkEmail($_POST["user-email"],$conn)){
@@ -32,12 +37,12 @@
 	}}
 
 	else if(checkEmail($_POST["user-email"],$conn)){
-		echo "Failed";
+		echo "Email already exists!";
 	}
          
 		 
 	else{
-		echo "Failed";
+		echo "Signup failed! May be server error. Please try again";
 	}
 
    
