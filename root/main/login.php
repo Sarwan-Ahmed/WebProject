@@ -244,7 +244,7 @@
 	      <input type="text" class="form-control" id="usr" name="username">
 	    </div>
 	    <div class="form-group">
-	      <label for="pwd">Password: <a id="anchor">Forgot?</a></label>
+	      <label for="pwd">Password: <a id="anchor" href="#">Forgot?</a></label>
 	      <input type="password" class="form-control" id="pwd" name="password">
 	    </div>
 	    <button type="submit" class="btn btn-dark">Login</button>
