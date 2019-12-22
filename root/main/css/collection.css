@@ -1,0 +1,27 @@
+.gallery{
+	margin: .5vw;
+	flex-flow: row-wrap;
+	display: flex;
+}
+
+.gallery div{
+	flex: auto;
+	width: 300px;
+	margin: .5vw;
+}
+
+.gallery div img{
+	width: 100%;
+	height: auto;
+}
+
+@media screen and(max-width: 700px){
+	.gallery div{
+		width: 400px;
+		margin: 0;
+	}
+
+	.gallery{
+		padding:0;
+	}
+}

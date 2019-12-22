@@ -1,25 +1,8 @@
-.mobile-nav{
-	width: 100%;
-	display:none;
-	margin:0px;
 
-}
-
-.mobile-nav ul{
-	display: inline;
-
-}
-
-.mobile-nav li{
-	display:inline-block;
-	width:19%;
-	
-	margin:0px;
-}
 
 
 .row-1{
-	margin-top: 90px;
+	margin-top: 120px;
 }
 
 #profile-pic{
@@ -48,6 +31,12 @@
 	margin:2px;
 }
 
+@media screen and (max-width: 444px){
+	#my-name{
+		font-size: 40px !important;
+	}
+}
+
 .edit-button{
 	margin-left: 30px;
 }
@@ -58,13 +47,7 @@
     width:100%;    
 }
 
-.search-bar{
-	width:50%;
-}
 
-.header-bar{
-	width:100%;
-}
 
 
 
@@ -73,14 +56,4 @@
     text-align:left;
   }
 }
-
-@media only screen and (max-width: 768px) {
-  .desktop-nav {
-    display:none;
-  }
-  .mobile-nav{
-  	display: block;
-  }
-}
-
 

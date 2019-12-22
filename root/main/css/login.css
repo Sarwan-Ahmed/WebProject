@@ -1,0 +1,25 @@
+body,html{
+	margin: 0;
+	padding: 0;
+	height:100%;
+}
+
+#main-heading{
+	font-family:  "Book Antiqua";
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#anchor{
+	text-decoration: underline;
+	color: grey;}
+
+
+@media screen and (max-width:460px){
+	#main-heading{
+		font-size: 30px;
+	}
+}
+
+	  				  		

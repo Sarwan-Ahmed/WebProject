@@ -12,11 +12,11 @@
 	session_start();	
 
 	// Create connection
-	$conn =mysqli_connect($servername, $username, $password,$dbname,"3307");
+	$conn =mysqli_connect($servername, $username, $password,$dbname,"3305");
 
 	// Check connection
 	if (!$conn) {
-	    header('Location: http://localhost/root/main/signup.php?q="Either Email or Password is incorrect!!"');
+	    header('Location: http://localhost/root/main/signup.php?q="Server Error!! Please try again later."');
 		exit();
 
 
@@ -30,8 +30,10 @@
 			$sql2 = "select * from user where email=".'"'.$_POST["user-email"].'"'.';';
 			$result = mysqli_query($conn, $sql2);
 			$row = mysqli_fetch_assoc($result);
+			$_SESSION["user-dp"] = $row["profile_picture"];
 			$_SESSION["id"] = $row["id"];
-			 header('Location: http://localhost/root/main/user-profile.php');
+			mkdir("resources/collection/".$_SESSION["id"]);
+			 header('Location: http://localhost/root/main/login.php');
 			 exit();
 			 
 	}}
@@ -42,7 +44,8 @@
          
 		 
 	else{
-		echo "Signup failed! May be server error. Please try again";
+		 header('Location: http://localhost/root/main/signup.php?q="Server Error!! Please try again later."');
+		 exit();
 	}
 
    

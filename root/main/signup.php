@@ -19,8 +19,9 @@
 <body>
 	<?php
 	if(isset($_GET['q'])){
+		$errormsg = str_replace("%"," ",$_GET['q']);
 		echo '
-			<div class="login-failed"><p class=" align-middle">Login failed!! Either User Name or Password is incorrect.<p></div>
+			<div class="login-failed"><p class=" align-middle">'.$errormsg.'<p></div>
 		';
 	}
 ?>
@@ -49,7 +50,7 @@
 			<div class="container ml-3 mr-3">
 			
 				 <h2 class="display-2">Join Free</h2>
-				 <h5 class="display-5">Already have an account? <a href="login.html">Login</a> </h5>
+				 <h5 class="display-5">Already have an account? <a href="login.php">Login</a> </h5>
 				 <!----  --->
 				 <form action="script/signup.php"  id="myForm" method="POST">
 				 	<div class="form-group fname">
@@ -62,11 +63,11 @@
 				    </div>  
 				    <div class="form-group email">
 				      <label for="usr-email">Email Address</label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Enter a valid email address"></i>
-				      <input type="email" class="form-control" id="usr-email" name="user-email" data-state="0" value="">
+				      <input type="email" class="form-control" id="usr-email" name="user-email" data-state="0" autocomplete="new-password">
 				    </div>
 				    <div class="form-group pwd">
 				      <label for="pwd">Password:</label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Password should be at least 6 characters long with at least one number, one lowercase and one uppercase letter"></i>
-				      <input type="password" class="form-control" id="pwd" name="password" data-state="0" value="">
+				      <input type="password" class="form-control" id="pwd" name="password" data-state="0" autocomplete="new-password">
 				    </div>
 				    <input type = "submit" id="join" class="btn btn-dark btn-block mb-3" value="Join">
 		 		 </form>

@@ -8,6 +8,7 @@
 	 
 	//include "duplicatemail.php";
     //include("C:\xampp\php\PEAR\initcontrols\header_myworks.php");
+    session_destroy();
 	session_start();	
 
 	// Create connection
@@ -23,7 +24,8 @@
 			$result = mysqli_query($conn,$sql);
 			while($row = mysqli_fetch_assoc($result)){
 				$_SESSION["username"] = $row["firstname"]." ".$row["lastname"];
-				$_SESSION["profile-dp"] = $row["profile_picture"];
+				$_SESSION["user-dp"] = $row["profile_picture"];
+				$_SESSION["id"] = $row["id"];
 				header('Location: http://localhost/root/main/user-profile.php');
 				exit();
 			}

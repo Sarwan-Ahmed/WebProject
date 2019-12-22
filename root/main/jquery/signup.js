@@ -4,7 +4,8 @@ function isDuplicate() {
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    	if(this.responseText === "*Email already in use"){
+    	if(this.responseText == "*Email already in use"){
+
     		return true;}
     	else{
 
@@ -26,13 +27,13 @@ function generateError(selector,message){
 }
 
 function validateFirstName(){
-		var regex = /[A-Z][a-zA-Z]*/;
+		var regex =  /^\s*([A-Z]\w*\s*)*$/;
 		var fname = document.getElementById("usr-fname");
 		return regex.test(fname.value);
 }
 
 function validateLastName(){
-		var regex = /[A-Z][a-zA-Z]*/;
+		var regex =  /^\s*([A-Z]\w*\s*)*$/;
 		var lname = document.getElementById("usr-lname");
 		return regex.test(lname.value);
 }
@@ -41,6 +42,12 @@ function validatePassword(){
 		var regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
 		var pwd = document.getElementById("pwd");
 		return regex.test(pwd.value);
+}
+
+function validateEmail(){
+	var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var email = document.getElementById("usr-email");
+	return regex.test(email.value);
 }
 
 
@@ -56,13 +63,17 @@ $(document).ready(function(){
 			generateError("div.fname","*This field is required");}
 
 		else if(!validateFirstName()){
-			generateError("div.fname","*Ensure proper capitalization");}
+			generateError("div.fname","*Ensure proper capitalization For Example: Karl Marx");}
 
 	});
 	$("#usr-email").blur(function(){
 
 		if($(this).val() == "" || $(this).val() == null ){
 			generateError("div.email","*This field is required");}
+
+		else if(!validateEmail()){
+			generateError("div.email","*Your email format is invalid")
+		}	
 
 		else if(isDuplicate()){
 				generateError("div.email","*Email already in use");}
@@ -76,7 +87,7 @@ $(document).ready(function(){
 			generateError("div.lname","*This field is required");}
 
 		else if(!validateLastName()){
-			generateError("div.lname","*Ensure proper capitalization");}
+			generateError("div.lname","*Ensure proper capitalization E.g: Karl Marx");}
 
 	});
  	
@@ -143,6 +154,10 @@ $(document).ready(function(){
 	function emailvalidation(){
 		if($("div.email input").val() == "" || $("div.email input").val() == null ){
 			return false;}
+
+		else if(!validateEmail()){
+			return false;
+		}	
 
 		else if(isDuplicate()){
 				return false;}

@@ -1,0 +1,42 @@
+.second-nav{
+	margin-top: 60px !important;
+}
+
+
+
+@media screen and (max-width: 900px){
+	.second-nav{
+	margin-top:55px;
+}
+
+}
+
+@media screen and (max-width: 617px){
+
+	
+	.sub-heading{
+		font-size: 15px;
+	}
+	.main-heading{
+		font-size: 50px; 
+		font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 617px){
+.second-nav{
+	margin-top: 54.5px !important;
+}
+
+}
+
+
+
+@media screen and (max-width: 468px){
+	.mob-tab ul li button{
+		padding:7px 0px 0px 0px;
+	}
+
+	
+
+}
