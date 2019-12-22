@@ -219,14 +219,14 @@
 		
 		</div>		
 
-
-		<div  id="main" style="">
-			<p id="query"><h4 class="display-4">Samsung Galaxy S5</h4></p>
-			<p id="result"><h5 cass="display-5">550,21 photos found</h5></p>
-			<p id="logo"><h6 class="display-6"><a href="unsplash-main.php" class="text-dark" style="text-decoration: none;">Pixagallery</a></h6></p>
+		<div style="margin-top:150px">
+			<h4 id="query" class="display-4 ml-3"></h4>
+			<h5 id="result" cLass="display-5 ml-3"></h5>
+			<h6  id="logo" class="display-6 ml-3"><a href="unsplash-main.php" class="text-dark" style="text-decoration: none;">Pixagallery</a></h6>	
 		</div>	
 		<div id="gallery" style="margin-top: 150px;">
-					
+				
+			
 
 
 		</div>	
@@ -249,7 +249,7 @@ function getPictures(){
 	  xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-	    	    console.log(this.responseText);
+	    	    //console.log(this.responseText);
 	    		var myCollection = JSON.parse(this.responseText);
 	    		populatePictures(myCollection);}};
 	  xhttp.open("GET", "./script/picturesAPI.php?q="+<?php if(isset($_GET['q'])){echo '"'.str_replace(" ", "%", $_GET['q']).'"';} else{echo '"Collection"';} ?>, true);
@@ -266,8 +266,23 @@ function populatePictures(myCollection){
 		$("#gallery").append(element);
 	}
 
+	<?php if(isset($_GET['q'])){echo 'updateLabels(myCollection.length,'.'"'.$_GET['q'].'"'.');';} 
+		  else{echo 'updateLabels(myCollection.length,'.'"'.$_SESSION["username"]."'s".' Collections'.'"'.');';}
+
+	?>
+	
+
 }
 
+
+function updateLabels(length,value){
+	var dumb = "";
+	$("#query").html(value);
+	if(length ==1){ dumb = "photo";}
+	else if(length == 0){dumb = "photo(s)";}
+	else{dumb ="photos";}
+	$("#result").html(length+" "+dumb+" found.");
+}
 
 
 

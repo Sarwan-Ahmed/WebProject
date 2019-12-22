@@ -166,22 +166,20 @@
 				
   			</div>
   			<div id="overlay">
+  				 <a href="user-profile.php" style="float:right;"><i class="far fa-times-circle"></i></a>
   						 <div class="media p-3">
+
 							   <?php echo '<img src="'.$_SESSION["user-dp"].'"'.'alt="User" class="mr-3 mt-3 rounded-circle" style="width:60px;">'; ?>
 							    <div class="media-body">
 							      <h4 class="text-white"><?php echo $_SESSION["username"]; ?> <small><i></i></small></h4>
-							      <p class="text-white" id="post-date"></p>      
+							      <p class="text-white" id="post-date"></p>    
+							      <a id="like"><i class="fas fa-heart text-white"> 0</i></a> 
+							      <a id="download"><i class="fas fa-download text-white"> Download</i></a>   
 							    </div>
 							  </div>
-
-
-
-
-
-
-
-
-
+							  <div class="enlarged">	
+							  		<div><img src="" width="500" height="500" id="image-tray"/></div>
+							 </div>				
 				</div>	
 			</div>	
 

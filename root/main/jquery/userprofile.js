@@ -20,6 +20,8 @@ $(document).ready(function(){
   	$('#gallery').on('click', '.single-img img', function() {
 	 	on();
 	 	$("#post-date").append("Posted on "+$(this).attr("data-pdate"));
+	 	
+	 	$("#image-tray").attr("src",$(this).attr("src"));
 
 });
 
