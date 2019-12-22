@@ -52,7 +52,7 @@
 				 <h2 class="display-2">Join Free</h2>
 				 <h5 class="display-5">Already have an account? <a href="login.php">Login</a> </h5>
 				 <!----  --->
-				 <form action="script/signup.php"  id="myForm" method="POST">
+				 <form action="/script/signup.php"  id="myForm" method="POST">
 				 	<div class="form-group fname">
 				      <label for="usr-fname">First Name  </label><i class="fas fa-question-circle ml-1" data-toggle="tooltip" title="Ensure proper capitalization"></i>
 				      <input type="text" class="form-control" id="usr-fname" name="fname" data-state="0">
