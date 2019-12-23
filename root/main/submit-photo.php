@@ -20,7 +20,7 @@
 			<?php session_start(); ?>
 			<!-------------------------------------NAVBAR FOR DESKTOP------------------------------>
 			<nav class="navbar bg-dark fixed-top navbar-dark desktop">
-				<a class="navbar-brand" href="unsplash-main"><h6 class="display-5">PixaGallery</h6></a>
+				<a class="navbar-brand" href="unsplash-main.php"><h6 class="display-5">PixaGallery</h6></a>
 				<ul class="nav mr-auto">
 					<li class="nav-item">
 						<form class="form-inline">
